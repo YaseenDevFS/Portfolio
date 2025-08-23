@@ -1,0 +1,114 @@
+.projects-container {
+  width: 100%;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 70px rgba(56,189,248,0.3), 0 0 40px rgba(129,140,248,0.5);
+}
+
+/* Image Overlay */
+.project-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.project-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+/* Overlay زرار */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 111111111;
+  backdrop-filter: blur(1px);
+  pointer-events: none;
+}
+.project-card:hover .overlay {
+  opacity: 1;
+}
+.overlay-btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(270deg, #38bdf8, #818cf8, #ec4899);
+  background-size: 600% 600%;
+  animation: gradientMove 3s ease infinite;
+  box-shadow: 0 0 15px rgba(56,189,248,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto;
+}
+.overlay-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(236,72,153,0.7);
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Content */
+.project-card-content {
+  padding: 20px;
+}
+.project-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradientMove 3s ease infinite;
+}
+.project-card-desc {
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.overlay a {
+  position: relative;
+  z-index: 111111111111111111111111111111111111111;
+  margin-bottom: 450px;
+  cursor: pointer;
+}

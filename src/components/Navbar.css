@@ -1,0 +1,151 @@
+/* Navbar العام */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+/* اللوجو - يظهر فقط في الموبايل */
+.logo {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #22d3ee;
+  position: absolute;
+  left: 20px;
+}
+
+/* قائمة الروابط */
+.navbar ul {
+  display: flex;
+  padding: 12px 20px;
+  border-radius: 25px;
+  gap: 20px;
+  background: rgba(20, 30, 70, 0.3);
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+}
+
+/* عناصر القائمة */
+.navbar ul li {
+  padding: 10px 22px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* تأثير Hover */
+.navbar ul li:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #22d3ee, #7f5af0);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.4);
+}
+
+/* العنصر النشط */
+.navbar ul li.active {
+  background: linear-gradient(90deg, #7f5af0, #22d3ee);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(127, 90, 240, 0.4);
+}
+
+/* Active Animations */
+.navbar ul li.active.left { animation: activeFadeIn-left 0.4s forwards; }
+.navbar ul li.active.right { animation: activeFadeIn-right 0.4s forwards; }
+
+@keyframes activeFadeIn-left {
+  from { transform: translateX(30px) scale(0.95); opacity: 0.3; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+@keyframes activeFadeIn-right {
+  from { transform: translateX(-30px) scale(0.95); opacity: 0.3; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #22d3ee;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo { display: block; }
+
+  .hamburger { display: flex; }
+
+  .navbar ul {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    width: 220px;
+    height: calc(400px);
+    gap: 20px;
+    border-radius: 20px 0 0 20px;
+    padding: 40px 20px;
+    background: rgba(20,30,70,0.95);
+    transition: right 0.4s ease;
+  }
+
+  .navbar ul.active { right: 0; }
+
+  .navbar ul li { width: 100%; text-align: center; }
+  .navbar {
+    backdrop-filter: blur(15px);
+    top: 0;
+    padding: 30px 10px;
+  }
+}
+.overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
+              radial-gradient(at 80% 30%, rgba(236,72,153,0.15), transparent 40%),
+              radial-gradient(at 50% 80%, rgba(139,92,246,0.15), transparent 40%);
+  animation: floatBg 15s ease-in-out infinite alternate;
+  z-index: -111111111111111111;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+}
