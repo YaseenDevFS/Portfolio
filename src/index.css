@@ -6,10 +6,21 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    /* يمنع ال context menu في iOS */
+    -webkit-user-select: none;
+    /* يمنع تحديد النصوص */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
+
 ul {
     list-style: none;
 }
+
 body {
     background-color: #151515;
     color: #ffffff;
