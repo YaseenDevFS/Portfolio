@@ -6,8 +6,8 @@ import project1 from '../assets/project1.png'
 const projects = [
   {
     title: 'E-Cornamce Website',
-    description: 'A responsive e-commerce website built with Mern stack technologies.',
-    link: 'https://e-cornamce-frontend.vercel.app/',
+    description: 'A responsive e-commerce website built with Mern stack technologies. with user authentication, product listings, and a shopping cart. and stripe payment gateway integration.',
+    link: 'https://furniro-frontend-rho.vercel.app/',
     image: project1
   },
   {
