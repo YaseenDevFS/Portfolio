@@ -11,13 +11,13 @@ const projects = [
     image: project1
   },
   {
-    title: 'E-commerce App',
-    description: 'A full-stack e-commerce application with user authentication and payment integration.',
+    title: 'Working....',
+    description: 'A full-stack e-commerce  with user authentication and payment integration.',
     link: 'https://your-ecommerce-link.com',
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80'
   },
   {
-    title: 'Blog Platform',
+    title: 'Working....',
     description: 'A modern blog platform with markdown support and a beautiful editor.',
     link: 'https://your-blog-link.com',
     image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80'
