@@ -7,8 +7,8 @@ const Hero = () => {
         <h2>Full Stack Developer</h2>
         <p>Welcome to my portfolio website. Here you can find my projects and skills.</p>
         <div className="links">
-          <button className="btn">Contact Me</button>
-          <button className="btn">View Projects</button>
+          <a href="#contact"><button className="btn">Contact Me</button></a>
+          <a href="#projects"><button className="btn">View Projects</button></a>
         </div>
       </div>
     </div>
